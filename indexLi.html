@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zomato</title>
+  <script>
+    let home=document.getElementsByClassName("Home");
+    let schedule=document.getElementsByClassName("Schedule");
+    let order=document.getElementsByClassName("Order"); 
+    let cart=document.getElementsByClassName("Cart");
+    let search=document.getElementsByClassName("search");
+   
+    function click_home(){
+      alert("You redirected to Home page!");
+    }
+    function click_schedule(){
+      alert("You redirected to Schedule page!");
+    }
+    function click_order(){
+      alert("You redirected to Order page!");
+    }
+    function click_cart(){
+      alert("You redirected to Cart page!");
+    } 
+    
+  </script>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#faf8e2;
+    }
+    header{
+      height: 100px;
+      background:#ff3939;
+      color:white;
+      padding:12px 25px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav ul{
+      display:flex;
+      flex-direction: row;
+      list-style: none;
+      gap:10px;
+    }
+
+    nav ul li{
+        background:#fd918b;
+        border:#faf9f8 solid 2px;
+        padding:6px 12px;
+        border-radius:4px;
+        text-align: right;
+    }
+
+    nav ul li a{
+      color:white;
+      text-align: right;
+      text-decoration:none;
+      font-size:15px;
+    }
+
+    nav ul li a:hover{
+      text-decoration:underline;
+    }
+
+    .search input{
+      padding:6px 10px;
+      border:none;
+      border-radius:4px;
+      outline:none;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" tabindex="0" class="sc-yvzia9-6 hxTfPc" height="30" >
+
+    <div class="search" style="text-align:left;">
+      <input type="text" placeholder="Search" style="width: 500px;">
+    </div>
+    <nav>
+      <ul>
+        <li class="Home"><a href="#" onclick="click_home()">Home</a></li>
+        <li class="Schedule"><a href="#" onclick="click_schedule()">Schedule</a></li>
+        <li class="Order"><a href="#" onclick="click_order()">Order</a></li>
+        <li class="Cart"><a href="#" onclick="click_cart()">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>
