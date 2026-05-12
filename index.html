@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zomato</title>
+  <script>
+    let home=document.getElementsByClassName("Home");
+    let schedule=document.getElementsByClassName("Schedule");
+    let order=document.getElementsByClassName("Order"); 
+    let cart=document.getElementsByClassName("Cart");
+    let search=document.getElementsByClassName("search");
+    let image=document.getElementsByClassName("image");
+    function click_image(){
+      alert("You clicked on the image!");
+    }
+    function click_home(){
+      alert("You redirected to Home page!");
+    }
+    function click_schedule(){
+      alert("You redirected to Schedule page!");
+    }
+    function click_order(){
+      alert("You redirected to Order page!");
+    }
+    function click_cart(){
+      alert("You redirected to Cart page!");
+    } 
+    
+  </script>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#faf8e2;
+    }
+
+    table{
+      margin: top 20px;
+      margin-left:330px;
+      justify-content:center;
+      height:200px;
+      width:50%;
+      color:rgb(0, 0, 0);
+      font-size:25px;
+      border-collapse:collapse;
+      margin-top:20px;
+    }
+     table th, table td{
+      color:rgb(0, 0, 0);
+      border: #000000 solid 2px;
+      padding:10px;
+      background:#faf8e2;
+    }
+      table th{
+        background:#ff9494;
+        color:rgb(0, 0, 0);
+      }
+
+    .head{
+      background-image: url(https://static.vecteezy.com/system/resources/thumbnails/011/539/493/small/seamless-pattern-vegetables-berries-and-fruits-background-it-can-be-used-for-wrapping-paper-packages-brochures-and-flyers-free-vector.jpg);
+      background-position: center;
+      background-size: cover;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header{
+      height: 100px;
+      background:#ff3939;
+      color:white;
+      padding:12px 25px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav ul{
+      display:flex;
+      flex-direction: row;
+      list-style: none;
+      gap:10px;
+    }
+
+    nav ul li{
+        background:#fd918b;
+        border:#faf9f8 solid 2px;
+        padding:6px 12px;
+        border-radius:4px;
+        text-align: right;
+    }
+
+    nav ul li a{
+      color:white;
+      text-align: right;
+      text-decoration:none;
+      font-size:15px;
+    }
+
+    nav ul li a:hover{
+      text-decoration:underline;
+    }
+
+    .search input{
+      padding:6px 10px;
+      border:none;
+      border-radius:4px;
+      outline:none;
+    }
+    main{
+        padding:40px 25px;
+        text-align:center;
+        border-radius: 20%;
+    }
+    main img{
+        border:#ff3939 solid 2px;
+        margin:10px;
+        border-radius: 15%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        -webkit-box-reflect: below 50px linear-gradient(transparent,transparent,rgba(255, 255, 255, 0.5));
+    }
+
+    .image{
+      transition: transform 0.3s ease;
+    }
+    .image:hover {
+      transform: scale(1.05);
+    }
+    footer{
+      background:#ff9494;
+      color:rgb(0, 0, 0);
+      text-align:center;
+      padding:10px 0;
+      position:fixed;
+      bottom:0;
+      width:100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" tabindex="0" class="sc-yvzia9-6 hxTfPc" height="30" >
+
+    <div class="search" style="text-align:left;">
+      <input type="text" placeholder="Search" style="width: 500px;">
+    </div>
+    <nav>
+      <ul>
+        <li class="Home"><a href="#" onclick="click_home()">Home</a></li>
+        <li class="Schedule"><a href="#" onclick="click_schedule()">Schedule</a></li>
+        <li class="Order"><a href="#" onclick="click_order()">Order</a></li>
+        <li class="Cart"><a href="#" onclick="click_cart()">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <main>
+        <div class="head">
+            <h1 style="padding-left: 20px; padding-right: 20px; border-radius: 10px; background:#faf8e2; font-size: 50px; color: rgb(0, 0, 0); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Welcome to Zomato</h1>
+            <p style="padding-left: 20px; padding-right: 20px; border-radius: 10px; background:#faf8e2;font-size: 20px; color: rgb(0, 0, 0); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Your favorite food delivered fast at your door.</p>
+        </div>
+        <br><hr style="width: auto; border: 2px solid #ff0000;"><br>
+        <img class="image" onclick="click_image()" alt="Restaurant Card" src="https://b.zmtcdn.com/data/pictures/4/20526454/1ad4ff025ef857c35a5ecce08fce5686_o2_featured_v2.jpg?output-format=webp" width="300" height="225"> 
+        <img class="image" onclick="click_image()" alt="Restaurant Card" src="https://b.zmtcdn.com/data/pictures/4/20756254/1b7e289f2afacfbb75a74ab9ceb8ed8e_o2_featured_v2.jpg?output-format=webp" width="300" height="225"> 
+        <img class="image" onclick="click_image()" alt="Restaurant Card" src="https://b.zmtcdn.com/data/pictures/4/22094784/1ba2386251db4f5dcd8f38e5389ae9f7_o2_featured_v2.jpg?output-format=webp" width="300" height="225">
+        <img class="image" onclick="click_image()" alt="Restaurant Card" src="https://b.zmtcdn.com/data/pictures/0/20571390/5ea2bba80f160e336da6985fcace38d1_o2_featured_v2.jpg" width="300" height="225">
+        <br><br><hr style="width: auto; border: 2px solid #ff0000;"><br><br><br><br><br><br><br>
+        <table>
+            <tr>
+                <th>Restaurant</th>
+                <th>Cuisine</th>
+                <th>Rating</th>
+            </tr>
+            <tr>
+                <td>Pizza Palace</td>
+                <td>Italian</td>
+                <td>4.5</td>
+            </tr>
+            <tr>
+                <td>Sushi World</td>
+                <td>Japanese</td>
+                <td>4.7</td>
+            </tr>
+            <tr>
+                <td>Curry House</td>
+                <td>Indian</td>
+                <td>4.3</td>
+            </tr>
+            <tr>
+                <td>Burger Barn</td>
+                <td>American</td>
+                <td>4.2</td>
+            </tr>
+            <tr>
+                <td>Veggie Delight</td>
+                <td>Vegetarian</td>
+                <td>4.6</td>
+            </tr>
+        </table>
+    </main>
+  <footer>
+      <p>&copy; 2024 Zomato. All rights reserved.</p>
+  </footer>
+</body>
+</html>
