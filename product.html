@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .product-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .product-image {
+            width: 300px;
+            height: 300px;
+            background-color: #ddd;
+        }
+        .product-details {
+            flex-grow: 1;
+            margin-bottom:200px;
+        }
+        .product-title {
+            font-size: 24px;   
+        }
+        .product-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #ff3939;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: #e63636;
+        }
+        header{
+            height: 100px;
+            background:#ff3939;
+            color:white;
+            padding:12px 25px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" tabindex="0" class="sc-yvzia9-6 hxTfPc" height="30" >
+
+        <div class="search" style="text-align:left;">
+            <input type="text" placeholder="Search" style="width: 500px;">
+        </div>
+            <nav>
+            <ul>
+                <li class="Home"><a href="#" onclick="click_home()">Home</a></li>
+                <li class="Schedule"><a href="#" onclick="click_schedule()">Schedule</a></li>
+                <li class="Order"><a href="#" onclick="click_order()">Order</a></li>
+                <li class="Cart"><a href="#" onclick="click_cart()">Cart</a></li>
+             </ul>
+        </nav>
+        <i class="fa-solid fa-circle-user"></i>
+        <svg style=" width: 50;height: 50; background:#ff3939;" viewBox="0 0 500 150">
+            <circle cx="250" cy="75" r="200" stroke="black" stroke-width="20" fill="red">
+        </svg>
+    </header>
+    <div class="product-container">
+        <div class="product-image">
+            <img src="https://b.zmtcdn.com/data/pictures/2/20415942/2eab5745bebe1970ef216ab362a0556f_o2_featured_v2.jpg?output-format=webp" alt="Product Image" style="width:100%; height:100%; object-fit:cover;">
+            <img src="https://b.zmtcdn.com/data/pictures/8/20350758/e3053a10244a63ce86a2a01a4d0d6d63_o2_featured_v2.jpg?output-format=webp" alt="Product Image" style="width:100%; height:100%; object-fit:cover;">
+            <img src="https://b.zmtcdn.com/data/pictures/4/22155284/f4e9aa14c80ba452a2259243f07e4152_o2_featured_v2.jpg?output-format=webp" alt="Product Image" style="width:100%; height:100%; object-fit:cover;">
+            <img src="https://b.zmtcdn.com/data/pictures/3/19355693/078ae4b1707b03d7541414e1bdfd8c1e_o2_featured_v2.jpg?output-format=webp" alt="Product Image" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="product-details">
+           
+            <div class="product-title">Delicious Pizza</div>
+                <div class="product-description">A mouth-watering pizza topped with fresh ingredients and a crispy crust.</div>
+                <button class="add-to-cart">Add to Cart</button>
+            <div class="product-title">Spicy Burger</div>
+                <div class="product-description">A juicy burger with a spicy kick, perfect for those who love bold flavors.</div>
+                <button class="add-to-cart">Add to Cart</button>
+            <div class="product-title">Chocolate Cake</div> 
+                <div class="product-description">A rich and decadent chocolate cake, perfect for satisfying your sweet tooth.</div>
+                <button class="add-to-cart">Add to Cart</button>
+            <div class="product-title">Fruit Smoothie</div>
+                <div class="product-description">A refreshing smoothie made with a blend of fresh fruits and yogurt.</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div> 
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Zomato. All rights reserved.</p>
+    </footer>
+</body>
+</html>

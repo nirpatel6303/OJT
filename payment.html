@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf8e2;
+            margin: 0;
+            padding: 20px;
+        }
+        .payment-container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .payment-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .payment-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .payment-form label {
+            margin-bottom: 5px;
+        }
+        .payment-form input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .pay{
+            padding: 10px 20px;
+            background-color: #ff3939;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .pay:hover {
+            background-color: #e63636;
+        }
+        .bank{
+            width: 80px;
+            margin-right: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-title">Payment Information</div>
+        <form class="payment-form">
+            <div class="pay-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2nWXGCqF5xIEqC9OQjppWFQHNaef2rF_7Zw&s" class="bank">
+                <input type="radio" name="payment type" value="Credit card" onclick="processCreditCard()"><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf2lO49JMIwO1IGk2LMY1WYB8mvIumR27BFg&s" class="bank">
+                <input type="radio" name="payment type" value="Debit card" onclick="processDebitCard()"><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeI4lWBNCU1GYHxS3ti4GOPWz8VvuwU49tVw&s" class="bank">
+                <input type="radio" name="payment type" value="UPI" onclick="processUPI()"><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfaOCPARjHp1iAocDtZAqlAOHf0uDdFM8-bA&s" class="bank" style="margin-top: 10px">
+                <input type="radio" name="payment type" value="Net banking" onclick="processNET()"><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT26L1JNCAQnjMK7Q5DGGkk5LZtWlk0VsH5Og&s" class="bank">
+                <input type="radio" name="payment type" value="Cash on delivery" onclick="processCashOnDelivery()"><br>
+                <input type="submit" value="submit" class="pay">
+            </div>
+        </form>
+    </div>
+</html>
