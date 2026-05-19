@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" tabindex="0" class="sc-yvzia9-6 hxTfPc" height="30" >
+
+        <div class="search" style="text-align:left;">
+            <input type="text" placeholder="Search" style="width: 500px;">
+        </div>
+        <nav>
+            <ul>
+                <li class="Home"><a href="#" onclick="click_home()">Home</a></li>
+                <li class="Schedule"><a href="#" onclick="click_schedule()">Schedule</a></li>
+                <li class="Order"><a href="#" onclick="click_order()">Order</a></li>
+                <li class="Cart"><a href="#" onclick="click_cart()">Cart</a></li>
+            </ul>
+        </nav>
+        <i class="bi bi-list" style="font-size: 34px; color: white; cursor:pointer; margin-right: 12px;"></i>
+        <i class="bi bi-person-circle" style="font-size: 40px; color: #ffb5b5;"></i>
+    </header>
+    <main class="payment-container" style="margin-top: 50px;">
+        <h1 style="margin-top: 0%; text-align: center;">Login</h1>
+        <form>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user" style="color:#ff3939"></i></span>
+                <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" style="color: #ff3939;"></i></span>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Text</span>
+                <input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Info">
+            </div>
+            <div class="input-group" style="justify-content: center;">
+                <button type="submit" class="btn btn-primary" style="background-color: #ff3939; border: none; justify-content: center;">Login</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Zomato. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -12,67 +12,174 @@
             padding: 20px;
         }
         .payment-container {
-            max-width: 400px;
+            max-width: 500px;
             margin: auto;
             background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            border-radius: 10px;
+            box-shadow: 0 0 14px rgba(0, 0, 0, 0.12);
         }
         .payment-title {
-            font-size: 24px;
+            font-size: 26px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .payment-subtitle {
+            color: #555;
             margin-bottom: 20px;
             text-align: center;
         }
         .payment-form {
             display: flex;
             flex-direction: column;
+            gap: 18px;
+        }
+        .payment-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .payment-method {
+            display: flex;
             align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border: 1px solid #f1f1f1;
+            border-radius: 8px;
+            background: #fff7f7;
+            cursor: pointer;
         }
-        .payment-form label {
-            margin-bottom: 5px;
+        .payment-method input {
+            margin: 0;
         }
-        .payment-form input {
+        .payment-method label {
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .method-fields {
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .method-fields.active {
+            display: flex;
+        }
+        .method-fields input,
+        .method-fields select {
             padding: 10px;
-            margin-bottom: 15px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 14px;
         }
-        .pay{
-            padding: 10px 20px;
+        .payment-actions {
+            display: flex;
+            justify-content: center;
+        }
+        .pay {
+            padding: 12px 24px;
             background-color: #ff3939;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 16px;
         }
         .pay:hover {
             background-color: #e63636;
         }
-        .bank{
-            width: 80px;
-            margin-right: 10px;
-            
+        .result-message {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 6px;
+            display: none;
+        }
+        .result-message.success {
+            background: #e8f7ea;
+            color: #1d6c2f;
+            display: block;
+        }
+        .result-message.error {
+            background: #fde6e6;
+            color: #a42020;
+            display: block;
         }
     </style>
 </head>
 <body>
     <div class="payment-container">
-        <div class="payment-title">Payment Information</div>
-        <form class="payment-form">
-            <div class="pay-box">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2nWXGCqF5xIEqC9OQjppWFQHNaef2rF_7Zw&s" class="bank">
-                <input type="radio" name="payment type" value="Credit card" onclick="processCreditCard()"><br>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf2lO49JMIwO1IGk2LMY1WYB8mvIumR27BFg&s" class="bank">
-                <input type="radio" name="payment type" value="Debit card" onclick="processDebitCard()"><br>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeI4lWBNCU1GYHxS3ti4GOPWz8VvuwU49tVw&s" class="bank">
-                <input type="radio" name="payment type" value="UPI" onclick="processUPI()"><br>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfaOCPARjHp1iAocDtZAqlAOHf0uDdFM8-bA&s" class="bank" style="margin-top: 10px">
-                <input type="radio" name="payment type" value="Net banking" onclick="processNET()"><br>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT26L1JNCAQnjMK7Q5DGGkk5LZtWlk0VsH5Og&s" class="bank">
-                <input type="radio" name="payment type" value="Cash on delivery" onclick="processCashOnDelivery()"><br>
-                <input type="submit" value="submit" class="pay">
+        <div class="payment-title">Complete your payment</div>
+        <div class="payment-subtitle">Choose a method and enter your details.</div>
+
+        <form id="paymentForm" class="payment-form" onsubmit="return handlePaymentSubmit(event)">
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <input type="radio" id="creditRadio" name="payment-method" value="credit" onclick="processCreditCard()">
+                    <label for="creditRadio">Credit Card</label>
+                </div>
+                <div class="payment-method">
+                    <input type="radio" id="debitRadio" name="payment-method" value="debit" onclick="processDebitCard()">
+                    <label for="debitRadio">Debit Card</label>
+                </div>
+                <div class="payment-method">
+                    <input type="radio" id="upiRadio" name="payment-method" value="upi" onclick="processUPI()">
+                    <label for="upiRadio">UPI</label>
+                </div>
+                <div class="payment-method">
+                    <input type="radio" id="netRadio" name="payment-method" value="netbanking" onclick="processNET()">
+                    <label for="netRadio">Net Banking</label>
+                </div>
+                <div class="payment-method" style="grid-column: span 2;">
+                    <input type="radio" id="codRadio" name="payment-method" value="cod" onclick="processCashOnDelivery()">
+                    <label for="codRadio">Cash on Delivery</label>
+                </div>
+            </div>
+
+            <div id="creditFields" class="method-fields">
+                <input type="text" id="cardNumber" placeholder="Card number" maxlength="19">
+                <input type="text" id="cardName" placeholder="Name on card">
+                <div style="display:flex; gap:10px;">
+                    <input type="text" id="expiry" placeholder="MM/YY" style="flex:1;">
+                    <input type="text" id="cvv" placeholder="CVV" maxlength="4" style="width:120px;">
+                </div>
+            </div>
+
+            <div id="debitFields" class="method-fields">
+                <input type="text" id="debitNumber" placeholder="Card number" maxlength="19">
+                <input type="text" id="debitName" placeholder="Name on card">
+                <div style="display:flex; gap:10px;">
+                    <input type="text" id="debitExpiry" placeholder="MM/YY" style="flex:1;">
+                    <input type="text" id="debitCvv" placeholder="CVV" maxlength="4" style="width:120px;">
+                </div>
+            </div>
+
+            <div id="upiFields" class="method-fields">
+                <input type="text" id="upiId" placeholder="Enter your UPI ID">
+            </div>
+
+            <div id="netbankingFields" class="method-fields">
+                <select id="bankName">
+                    <option value="">Select bank</option>
+                    <option value="Bank of America">Bank of America</option>
+                    <option value="Chase">Chase</option>
+                    <option value="Wells Fargo">Wells Fargo</option>
+                    <option value="Capital One">Capital One</option>
+                </select>
+                <input type="text" id="netUser" placeholder="User ID / Account number">
+            </div>
+
+            <div id="codFields" class="method-fields">
+                <div style="color:#444;">You can pay with cash when your order arrives.</div>
+            </div>
+
+            <div class="payment-actions">
+                <button type="submit" class="pay">Pay Now</button>
             </div>
         </form>
+
+        <div id="resultMessage" class="result-message"></div>
     </div>
+
+    <script src="payment.js"></script>
+</body>
 </html>

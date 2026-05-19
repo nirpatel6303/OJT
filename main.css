@@ -76,3 +76,66 @@ nav ul li a:hover{
     margin-bottom: 20px;
     text-align: center;
 }
+.Home{
+    border: none;
+}
+.Schedule{
+    border: none;
+}
+.Order{
+    border: none;
+}
+.Cart{
+    border: none;
+}
+
+/* Sidebar styles */
+.sidebar{
+    position:fixed;
+    right:-220px; /* hidden by default off-screen (matches reduced width) */
+    top:100px; /* below header */
+    width:180px; /* reduced width */
+    height:calc(100% - 140px);
+    background: #ffeded;
+    padding:12px 10px;
+    box-shadow: -2px 0 12px rgba(0,0,0,0.12);
+    transition: right 300ms ease;
+    z-index:999;
+}
+.sidebar.open{ right:0; }
+.sidebar .close-btn{
+    background:transparent;
+    border:none;
+    font-size:22px;
+    line-height:1;
+    float:right;
+    cursor:pointer;
+}
+.sidebar nav ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:8px;
+    padding:0;
+    margin-left:0;
+    align-items:flex-start;
+}
+.sidebar nav ul li{
+    background:#ff9494;
+    padding:10px 12px;
+    border-radius:6px;
+    width:100%;
+}
+.sidebar nav ul li a{
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    display:block;
+    text-align:left;
+    padding-left:4px;
+    font-size:15px;
+}
+.sidebar nav ul li a:hover{
+    text-decoration:underline;
+}

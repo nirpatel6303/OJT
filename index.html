@@ -5,30 +5,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zomato</title>
-  <script>
-    let home=document.getElementsByClassName("Home");
-    let schedule=document.getElementsByClassName("Schedule");
-    let order=document.getElementsByClassName("Order"); 
-    let cart=document.getElementsByClassName("Cart");
-    let search=document.getElementsByClassName("search");
-    let image=document.getElementsByClassName("image");
-    function click_image(){
-      alert("You clicked on the image!");
-    }
-    function click_home(){
-      alert("You redirected to Home page!");
-    }
-    function click_schedule(){
-      alert("You redirected to Schedule page!");
-    }
-    function click_order(){
-      alert("You redirected to Order page!");
-    }
-    function click_cart(){
-      alert("You redirected to Cart page!");
-    } 
-    
-  </script>
+    <script>
+      let home = document.getElementsByClassName("Home");
+      let schedule = document.getElementsByClassName("Schedule");
+      let order = document.getElementsByClassName("Order");
+      let cart = document.getElementsByClassName("Cart");
+      let search = document.getElementsByClassName("search");
+      let image = document.getElementsByClassName("image");
+
+      function click_image(){
+        alert("You clicked on the image!");
+      }
+      function click_home(){
+        alert("You redirected to Home page!");
+      }
+      function click_schedule(){
+        alert("You redirected to Schedule page!");
+      }
+      function click_order(){
+        alert("You redirected to Order page!");
+      }
+      function click_cart(){
+        alert("You redirected to Cart page!");
+      }
+
+      // Simple sidebar toggle using `let` for clarity
+      let toggleSidebar = function(){
+        let sidebar = document.getElementById('sidebar');
+        if(!sidebar) return;
+        if(sidebar.classList.contains('open')){
+          sidebar.classList.remove('open');
+          sidebar.setAttribute('aria-hidden','true');
+        } else {
+          sidebar.classList.add('open');
+          sidebar.setAttribute('aria-hidden','false');
+        }
+      };
+
+      document.addEventListener('DOMContentLoaded', function(){
+        let sidebarToggle = document.getElementById('sidebarToggle');
+        let closeBtn = document.getElementById('sidebarClose');
+
+        if(sidebarToggle){
+          sidebarToggle.addEventListener('click', toggleSidebar);
+          sidebarToggle.addEventListener('keydown', function(e){
+            if(e.key === 'Enter' || e.key === ' '){
+              e.preventDefault();
+              toggleSidebar();
+            }
+          });
+        }
+
+        if(closeBtn){
+          closeBtn.addEventListener('click', function(){
+            let sidebar = document.getElementById('sidebar');
+            if(sidebar){
+              sidebar.classList.remove('open');
+              sidebar.setAttribute('aria-hidden','true');
+            }
+          });
+        }
+      });
+    </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="main.css">
   <style>
 
@@ -71,12 +111,12 @@
     }
 
     main{
-        padding:40px 25px;
-        text-align:center;
-        border-radius: 20%;
+      padding:40px 25px;
+      text-align:center;
+      border-radius: 20%;
     }
     main img{
-        border:#ff3939 solid 2px;
+        border:none;
         margin:10px;
         border-radius: 15%;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
@@ -108,12 +148,22 @@
         <li class="Cart"><a href="#" onclick="click_cart()">Cart</a></li>
       </ul>
     </nav>
-    <i class="fa-solid fa-circle-user"></i>
-    <svg style=" width: 50;height: 50; background:#ff3939;" viewBox="0 0 500 150">
-      <circle cx="250" cy="75" r="200" stroke="black" stroke-width="20" fill="red">
-    </svg>
+    <i id="userIcon" class="bi bi-person-circle" style="font-size: 40px; color: #ffb5b5; cursor:pointer;" role="button" tabindex="0" aria-label="User menu"></i>
+    <i id="sidebarToggle" class="bi bi-list" style="font-size: 34px; color: white; cursor:pointer; margin-left: 12px;" role="button" tabindex="0" aria-label="Open sidebar"></i>
   </header>
- 
+  
+  <aside id="sidebar" class="sidebar" aria-hidden="true">
+    <button id="sidebarClose" class="close-btn" aria-label="Close sidebar">×</button>
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#client">Client</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
   <main>
         <div class="head">
             <h1 style="padding-left: 20px; padding-right: 20px; border-radius: 10px; background:#faf8e2; font-size: 50px; color: rgb(0, 0, 0); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Welcome to Zomato</h1>
