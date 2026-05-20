@@ -120,7 +120,7 @@
         margin:10px;
         border-radius: 15%;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        -webkit-box-reflect: below 50px linear-gradient(transparent,transparent,rgba(255, 255, 255, 0.5));
+        -webkit-box-reflect: below 50px linear-gradient(transparent,transparent,rgba(56, 37, 37, 0.5));
     }
 
     .image{
@@ -148,7 +148,9 @@
         <li class="Cart"><a href="#" onclick="click_cart()">Cart</a></li>
       </ul>
     </nav>
-    <i id="userIcon" class="bi bi-person-circle" style="font-size: 40px; color: #ffb5b5; cursor:pointer;" role="button" tabindex="0" aria-label="User menu"></i>
+    <a href="loginpage.html" aria-label="Login page">
+      <i id="userIcon" class="bi bi-person-circle" style="font-size: 40px; color: #ffb5b5; cursor:pointer;" tabindex="0"></i>
+    </a>
     <i id="sidebarToggle" class="bi bi-list" style="font-size: 34px; color: white; cursor:pointer; margin-left: 12px;" role="button" tabindex="0" aria-label="Open sidebar"></i>
   </header>
   
@@ -166,8 +168,8 @@
 
   <main>
         <div class="head">
-            <h1 style="padding-left: 20px; padding-right: 20px; border-radius: 10px; background:#faf8e2; font-size: 50px; color: rgb(0, 0, 0); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Welcome to Zomato</h1>
-            <p style="padding-left: 20px; padding-right: 20px; border-radius: 10px; background:#faf8e2;font-size: 20px; color: rgb(0, 0, 0); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Your favorite food delivered fast at your door.</p>
+            <h1 style="padding-left: 20px; padding-right: 20px; border-radius: 10px; background:#faf8e2; font-size: 50px; color: rgb(0, 0, 0); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);margin-bottom: 0;">Welcome to Zomato</h1>
+            <p style="padding-left: 20px; padding-right: 20px; border-radius: 10px; background:#faf8e2;font-size: 20px; color: rgb(0, 0, 0); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);margin-top: 0;">Your favorite food delivered fast at your door.</p>
         </div>
         <br><hr style="width: auto; border: 2px solid #ff0000;"><br>
         <img class="image" onclick="click_image()" alt="Restaurant Card" src="https://b.zmtcdn.com/data/pictures/4/20526454/1ad4ff025ef857c35a5ecce08fce5686_o2_featured_v2.jpg?output-format=webp" width="300" height="225"> 

@@ -23,27 +23,38 @@
                 <li class="Cart"><a href="#" onclick="click_cart()">Cart</a></li>
             </ul>
         </nav>
-        <i class="bi bi-list" style="font-size: 34px; color: white; cursor:pointer; margin-right: 12px;"></i>
         <i class="bi bi-person-circle" style="font-size: 40px; color: #ffb5b5;"></i>
+        <i class="bi bi-list" style="font-size: 34px; color: white; cursor:pointer; margin-right: 12px;"></i>
+        
     </header>
     <main class="payment-container" style="margin-top: 50px;">
         <h1 style="margin-top: 0%; text-align: center;">Login</h1>
         <form>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user" style="color:#ff3939"></i></span>
-                <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+            <div class="input-group" style="margin-bottom: 7px;">
+                <span class="input-group-addon" style="border-radius: 7px;"><i class="glyphicon glyphicon-user" style="color:#ff3939;"></i></span>
+                <input id="email" type="email" class="form-control" name="email" placeholder="Email" style="border-radius: 7px;">
+            </div>
+            <div class="input-group" style="margin-bottom: 7px;">
+                <span class="input-group-addon" style="border-radius: 7px;"><i class="glyphicon glyphicon-lock" style="color: #ff3939;"></i></span>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password" style="border-radius: 7px;">
             </div>
             <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" style="color: #ff3939;"></i></span>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                <span class="input-group-addon" style="border-radius: 7px;">Text</span>
+                <input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Info" style="border-radius: 7px;">
             </div>
-            <div class="input-group">
-                <span class="input-group-addon">Text</span>
-                <input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Info">
+            <div>
+                <p style="font-size: large; margin-top:20px; text-align: center;">Or</p>
             </div>
-            <div class="input-group" style="justify-content: center;">
-                <button type="submit" class="btn btn-primary" style="background-color: #ff3939; border: none; justify-content: center;">Login</button>
+            <div style="text-align: center;color:#ffb5b5 ">
+                <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F&ec=GAlAwAE&hl=en_GB&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S1043460467%3A1779255615806497" style="color:#ffb5b5"><i class="bi bi-google" style="font-size: 30px;"></i></a>
+                <a href="https://facebook.com" style="color:#ffb5b5"><i class="bi bi-facebook" style="margin-left: 20px;font-size: 30px;"></i></a>
+                <a href="https://x.com/i/flow/login" style="color:#ffb5b5"><i class="bi bi-twitter" style="margin-left: 20px;font-size: 30px;"></i></a>
             </div>
+            <br>
+            <div class="input-group" style="text-align: center;">
+                <button type="submit" class="btn btn-primary" style="background-color: #ff3939; margin-left: 150px; border: none; text-align: center;">Login</button>
+            </div>
+            
         </form>
     </main>
     <footer>
