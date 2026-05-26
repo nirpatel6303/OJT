@@ -10,26 +10,73 @@
     <style>
         .product-container {
             display: flex;
-            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
             gap: 20px;
-            max-width: 800px;
-            margin: auto;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .product-card {
+            width: calc(25% - 15px);
+            min-width: 220px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         .product-image {
-            width: 300px;
-            height: 300px;
-            background-color: #ddd;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #ffffff;
         }
-        .product-details {
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .product-content {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             flex-grow: 1;
-            margin-bottom:200px;
         }
         .product-title {
-            font-size: 24px;   
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+        .product-price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .product-price .final-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #222;
+        }
+        .product-price .original-price {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+        }
+        .product-price .discount-label {
+            font-size: 13px;
+            color: #ff3939;
+            font-weight: 700;
         }
         .product-description {
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+            flex-grow: 1;
         }
         .add-to-cart {
             padding: 10px 20px;
@@ -38,9 +85,31 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            align-self: flex-start;
         }
         .add-to-cart:hover {
             background-color: #e63636;
+        }
+        .cart-count {
+            display: inline-block;
+            min-width: 24px;
+            padding: 2px 6px;
+            margin-left: 6px;
+            background: #ffffff;
+            color: #ff3939;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        @media (max-width: 980px) {
+            .product-card {
+                width: calc(50% - 15px);
+            }
+        }
+        @media (max-width: 640px) {
+            .product-card {
+                width: 100%;
+            }
         }
         header{
             height: 100px;
@@ -65,33 +134,133 @@
                 <li class="Home"><a href="#" onclick="click_home()">Home</a></li>
                 <li class="Schedule"><a href="#" onclick="click_schedule()">Schedule</a></li>
                 <li class="Order"><a href="#" onclick="click_order()">Order</a></li>
-                <li class="Cart"><a href="#" onclick="click_cart()">Cart</a></li>
+                <li class="Cart"><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
              </ul>
         </nav>
         <i class="bi bi-list" style="font-size: 34px; color: white; cursor:pointer; margin-right: 12px;"></i>
         <i class="bi bi-person-circle" style="font-size: 40px; color: #ffb5b5;"></i>
     </header>
     <div class="product-container">
-        <div class="product-image">
-            <br><br>
-            <img src="https://b.zmtcdn.com/data/pictures/2/20415942/2eab5745bebe1970ef216ab362a0556f_o2_featured_v2.jpg?output-format=webp" alt="Product Image" style="width:100%; height:100%; object-fit:cover;">
-            <div class="product-title">Delicious Pizza</div>
+        <div class="product-card" data-name="Delicious Pizza" data-price="249" data-original-price="299" data-discount="17" data-image="https://b.zmtcdn.com/data/pictures/2/20415942/2eab5745bebe1970ef216ab362a0556f_o2_featured_v2.jpg?output-format=webp">
+            <div class="product-image">
+                <img src="https://b.zmtcdn.com/data/pictures/2/20415942/2eab5745bebe1970ef216ab362a0556f_o2_featured_v2.jpg?output-format=webp" alt="Delicious Pizza">
+            </div>
+            <div class="product-content">
+                <div class="product-title">Delicious Pizza</div>
+                <div class="product-price">
+                    <span class="final-price">₹249</span>
+                    <span class="original-price">₹299</span>
+                    <span class="discount-label">17% off</span>
+                </div>
                 <div class="product-description">A mouth-watering pizza topped with fresh ingredients and a crispy crust.</div>
                 <button class="add-to-cart">Add to Cart</button>
-            <img src="https://b.zmtcdn.com/data/pictures/8/20350758/e3053a10244a63ce86a2a01a4d0d6d63_o2_featured_v2.jpg?output-format=webp" alt="Product Image" style="width:100%; height:100%; object-fit:cover;">
-            <div class="product-title">Spicy Burger</div>
+            </div>
+        </div>
+        <div class="product-card" data-name="Spicy Burger" data-price="179" data-original-price="219" data-discount="18" data-image="https://b.zmtcdn.com/data/pictures/8/20350758/e3053a10244a63ce86a2a01a4d0d6d63_o2_featured_v2.jpg?output-format=webp">
+            <div class="product-image">
+                <img src="https://b.zmtcdn.com/data/pictures/8/20350758/e3053a10244a63ce86a2a01a4d0d6d63_o2_featured_v2.jpg?output-format=webp" alt="Spicy Burger">
+            </div>
+            <div class="product-content">
+                <div class="product-title">Spicy Burger</div>
+                <div class="product-price">
+                    <span class="final-price">₹179</span>
+                    <span class="original-price">₹219</span>
+                    <span class="discount-label">18% off</span>
+                </div>
                 <div class="product-description">A juicy burger with a spicy kick, perfect for those who love bold flavors.</div>
                 <button class="add-to-cart">Add to Cart</button>
-            <img src="https://b.zmtcdn.com/data/pictures/4/22155284/f4e9aa14c80ba452a2259243f07e4152_o2_featured_v2.jpg?output-format=webp" alt="Product Image" style="width:100%; height:100%; object-fit:cover;">
-            <div class="product-title">Chocolate Cake</div> 
+            </div>
+        </div>
+        <div class="product-card" data-name="Chocolate Cake" data-price="399" data-original-price="499" data-discount="20" data-image="https://b.zmtcdn.com/data/pictures/4/22155284/f4e9aa14c80ba452a2259243f07e4152_o2_featured_v2.jpg?output-format=webp">
+            <div class="product-image">
+                <img src="https://b.zmtcdn.com/data/pictures/4/22155284/f4e9aa14c80ba452a2259243f07e4152_o2_featured_v2.jpg?output-format=webp" alt="Chocolate Cake">
+            </div>
+            <div class="product-content">
+                <div class="product-title">Chocolate Cake</div>
+                <div class="product-price">
+                    <span class="final-price">₹399</span>
+                    <span class="original-price">₹499</span>
+                    <span class="discount-label">20% off</span>
+                </div>
                 <div class="product-description">A rich and decadent chocolate cake, perfect for satisfying your sweet tooth.</div>
                 <button class="add-to-cart">Add to Cart</button>
-            <img src="https://b.zmtcdn.com/data/pictures/3/19355693/078ae4b1707b03d7541414e1bdfd8c1e_o2_featured_v2.jpg?output-format=webp" alt="Product Image" style="width:100%; height:100%; object-fit:cover;">
-            <div class="product-title">Fruit Smoothie</div>
+            </div>
+        </div>
+        <div class="product-card" data-name="Fruit Smoothie" data-price="129" data-original-price="159" data-discount="19" data-image="https://b.zmtcdn.com/data/pictures/3/19355693/078ae4b1707b03d7541414e1bdfd8c1e_o2_featured_v2.jpg?output-format=webp">
+            <div class="product-image">
+                <img src="https://b.zmtcdn.com/data/pictures/3/19355693/078ae4b1707b03d7541414e1bdfd8c1e_o2_featured_v2.jpg?output-format=webp" alt="Fruit Smoothie">
+            </div>
+            <div class="product-content">
+                <div class="product-title">Fruit Smoothie</div>
+                <div class="product-price">
+                    <span class="final-price">₹129</span>
+                    <span class="original-price">₹159</span>
+                    <span class="discount-label">19% off</span>
+                </div>
                 <div class="product-description">A refreshing smoothie made with a blend of fresh fruits and yogurt.</div>
-                <button class="add-to-cart">Add to Cart</button><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
         </div>
     </div>
+    <script>
+        const cartCountElement = document.querySelector('.cart-count');
+
+        function loadCart() {
+            return JSON.parse(localStorage.getItem('cart') || '[]');
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function showCartCount() {
+            const cart = loadCart();
+            if (cartCountElement) {
+                cartCountElement.textContent = cart.length;
+            }
+        }
+
+        function addProductToCart(product) {
+            const cart = loadCart();
+            cart.push(product);
+            saveCart(cart);
+            showCartCount();
+            alert(product.name + ' has been added to your cart.');
+        }
+
+        function setupAddButtons() {
+            const cards = document.querySelectorAll('.product-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                const button = card.querySelector('.add-to-cart');
+                if (!button) {
+                    continue;
+                }
+
+                button.addEventListener('click', function () {
+                    const name = card.dataset.name || 'Product';
+                    const price = parseFloat(card.dataset.price || '0');
+                    const originalPrice = parseFloat(card.dataset.originalPrice || price);
+                    const discount = card.dataset.discount || '0';
+                    const image = card.dataset.image || '';
+
+                    addProductToCart({
+                        name: name,
+                        price: price,
+                        originalPrice: originalPrice,
+                        discount: discount,
+                        image: image
+                    });
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            showCartCount();
+            setupAddButtons();
+        });
+    </script>
     <footer>
         <p>&copy; 2024 Zomato. All rights reserved.</p>
     </footer>
