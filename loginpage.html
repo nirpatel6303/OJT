@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="main.css">
-    <script src="FormValidate.js"></script>
 </head>
 <body>
     <header>
@@ -30,10 +29,10 @@
     </header>
     <main class="payment-container" style="margin-top: 50px;">
         <h1 style="margin-top: 0%; text-align: center;">Login</h1>
-        <form>
+        <form action="http://localhost:8000/submit" method="post">
             <div class="input-group" style="margin-bottom: 7px;">
                 <span class="input-group-addon" style="border-radius: 7px;"><i class="glyphicon glyphicon-user" style="color:#ff3939;"></i></span>
-                <input id="email" type="text" class="form-control" name="email" placeholder="Email" style="border-radius: 7px;">
+                <input id="email" type="email" class="form-control" name="email" placeholder="Email" style="border-radius: 7px;">
             </div>
             <div class="input-group" style="margin-bottom: 7px;">
                 <span class="input-group-addon" style="border-radius: 7px;"><i class="glyphicon glyphicon-lock" style="color: #ff3939;"></i></span>
@@ -53,7 +52,7 @@
             </div>
             <br>
             <div class="input-group" style="text-align: center;">
-                <button type="submit" class="btn btn-primary" style="background-color: #ff3939; margin-left: 150px; border: none; text-align: center;" onclick="validate()">Login</button>
+                <button type="submit" class="btn btn-primary" style="background-color: #ff3939; margin-left: 150px; border: none; text-align: center;">Login</button>
             </div>
             
         </form>
